@@ -2,20 +2,20 @@ package facturacion;
 import java.util.Scanner;
 public class ventas {
 
-    Boolean parar = Boolean.TRUE;
-    public void menu (){
 
-    do{
-        menuM();
-        Integer opcion = retornarOP();
+    public void menu() {
+        Boolean parar = Boolean.TRUE;
+        do {
+            menuM();
+            Integer opcion = retornarOP();
+            parar = menucase(opcion);
 
+        } while (parar);
+    }
 
-    }while(parar);
-}
+   //
 
-
-
-    public void menuM () {
+    public void menuM() {
 
         System.out.println("Bievenido al sistema facturación");
         System.out.println("Escoga una opción");
@@ -25,20 +25,34 @@ public class ventas {
     public int retornarOP() {
         Integer opcion;
         Scanner lector = new Scanner(System.in);
-        while(!lector.hasNextInt()) lector.next();
+        while (!lector.hasNextInt()) lector.next();
         opcion = lector.nextInt();
         return opcion;
     }
 
-    public Boolean menucase(Integer opcion){
-        switch (opcion){
+    public () {
+        Integer opcion;
+        Scanner lector = new Scanner(System.in);
+        while (!lector.hasNextInt()) lector.next();
+        opcion = lector.nextInt();
+        return opcion;
+    }
 
-            case 1 :
+    public Boolean menucase(Integer opcion) {
+        switch (opcion) {
 
-
-
-
-
+            case 1: gestionartelevisor();
+                return true;
+            case 2: gestionarnevera();
+                return true;
+            case 3: gestionarelesctrodomestico();
+            return true;
+            case 4: mostrarventas;
+            case 5:
+                return false;
+            default:
+                System.out.println("Por favor escoja una opción validad");
+                return true;
 
 
 
@@ -46,12 +60,10 @@ public class ventas {
 
 
 
-    }
+}
 
 
 
-
-      }
 
 
 
