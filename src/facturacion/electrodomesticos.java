@@ -1,18 +1,52 @@
 package facturacion;
 
-public  class  electrodomesticos {
+public abstract class  electrodomesticos {
 
-    public String nombre;
-    public String consumo;
-    public String procedencia;
-    public Double precio;
+    private String nombre;
+    private Character consumo;
+    private String procedencia;
+    private Double precio;
 
-    public electrodomesticos(String nombre, String consumo, String procedencia, double precio) {
+    public electrodomesticos(String nombre, Character consumo, String procedencia) {
         this.nombre = nombre;
         this.consumo = consumo;
         this.procedencia = procedencia;
+        precio();
 
     }
+
+    public void precio(){
+       preciobase(this.consumo, this.procedencia);
+    }
+
+    public void preciobase(Character consumo, String procedencia){
+
+     switch (consumo) {
+
+         case 'A':
+             precio += 450000;
+             break;
+         case 'B':
+             precio += 350000;
+             break;
+         case 'C':
+         default:
+             System.out.println("por favor ingrese un consumo correcto  en mayuscula ( A , B , C)");
+     }
+
+     if (procedencia.equalsIgnoreCase("Importado")) {
+         precio += 350000;
+     }
+
+     else if(procedencia.equalsIgnoreCase("Nacional")) {
+         precio += 250000;
+     }
+     else
+        {
+            System.out.println("por favo ingrese un consumo correcto en mayuscula (A,B, C)");
+        }
+
+     }
 
 
     public String getNombre() {
@@ -23,11 +57,11 @@ public  class  electrodomesticos {
         this.nombre = nombre;
     }
 
-    public String getConsumo() {
+    public Character getConsumo() {
         return consumo;
     }
 
-    public void setConsumo(String consumo) {
+    public void setConsumo(Character consumo) {
         this.consumo = consumo;
     }
 

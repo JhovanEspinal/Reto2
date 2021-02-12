@@ -7,8 +7,8 @@ public class televisor extends electrodomesticos{
 
 
 
-    public televisor(String nombre, String consumo, String procedencia, double precio, int pulgadas) {
-        super(nombre, consumo, procedencia, precio);
+    public televisor(String nombre, String consumo, String procedencia, int pulgadas) {
+        super(nombre, consumo, procedencia);
         this.pulgadas = pulgadas;
     }
 }
