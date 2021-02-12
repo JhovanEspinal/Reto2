@@ -7,6 +7,8 @@ public class nevera extends electrodomesticos{
     public nevera(String nombre, Character consumo, String procedencia, Integer capacidad) {
         super(nombre, consumo, procedencia);
         this.capacidad = capacidad;
+        super.precio();
+        precio();
     }
 
 
@@ -14,8 +16,8 @@ public class nevera extends electrodomesticos{
     public void precio(){
        if (capacidad > 120) {
            Integer litros = capacidad - 120;
-           Integer cantidad = capacidad/10;
-           Double prec = getPrecio() + cantidad*getPrecio()+0.05;
+           Integer cantidad = litros/10;
+           Double prec = getPrecio() + cantidad*getPrecio()*0.05;
            setPrecio(prec);
        }
 

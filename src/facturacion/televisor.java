@@ -2,12 +2,15 @@ package facturacion;
 
 public class televisor extends electrodomesticos{
     private int pulgadas;
-    private boolean TDT;
+    private Boolean TDT;
 
 
-    public televisor(String nombre, Character consumo, String procedencia, int pulgadas) {
+    public televisor(String nombre, Character consumo, String procedencia, int pulgadas, Boolean TDT) {
         super(nombre, consumo, procedencia);
         this.pulgadas = pulgadas;
+        this.TDT=TDT;
+        super.precio();
+        precio();
     }
 
     //calcular precio del televisor
@@ -17,8 +20,10 @@ public class televisor extends electrodomesticos{
      if (pulgadas > 40){
          prec+= prec*0.3;
      }
-
-
+     if(TDT){
+         prec +=250000;
+     }
+     setPrecio(prec);
 
     }
     public int getPulgadas() {
