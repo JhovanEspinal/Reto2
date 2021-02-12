@@ -1,6 +1,6 @@
 package facturacion;
 
-public abstract class  electrodomesticos {
+public class  electrodomesticos {
 
     private String nombre;
     private Character consumo;
